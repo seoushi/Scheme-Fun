@@ -1,0 +1,5 @@
+This project is based on http://codingnaked.wordpress.com/tag/iphone-macosx-xcode-scheme-build-phase-objective-c-c/ / http://github.com/weiju/xcode-gambitc-templates/tree/master .
+
+I have updated it to work on 3.1 and have included the compiled simulator and device libs in Gambit-C.zip . Gambit-C.zip should be moved to /usr/local/ . Also if you plan to use the simulator you will need to change your linking search path to not include the device folder otherwise it gets confused and won't link.
+
+Hopefully I can get some neat little demo things in this project.
