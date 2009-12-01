@@ -15,8 +15,8 @@
 
 ;; easy way to peform an operation on all elements of the vector
 (define (vec2-op op a b)
-  (make-vec4 (op (vec2-x a) (vec2-x b))
-	     (op (vec2-y a) (vec2-y b)))
+  (make-vec2 (op (vec2-x a) (vec2-x b))
+	     (op (vec2-y a) (vec2-y b))))
 
 ;; adds v1 and v2
 (define (vec2-add a b)
@@ -51,12 +51,31 @@
 
 ;; magnitude
 (define (vec2-mag a)
-  (sqrt (vec2-dot a a))
+  (sqrt (vec2-dot a a)))
 
 ;; distance
 (define (vec2-dist a b)
   (vec2-mag (vec2-sub a b)))
 
 ;; linear interpolation
-(define (vec4-lerp a b time)
+(define (vec2-lerp a b time)
   (vec2-add a (vec2-scale (vec2-sub b a) time)))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                        test code
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;(define a (make-vec2 1 1))
+;;(define b (make-vec2 2 2))
+
+;;(vec2-add a b)
+;;(vec2-sub a b)
+;;(vec2-scale b 4)
+;;(vec2-norm a)
+;;(vec2-dot a b)
+
+;;(vec2-mag b)
+;;(vec2-dist a b)
+;;(vec4-lerp a b 0)
