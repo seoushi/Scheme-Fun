@@ -29,11 +29,11 @@
   (vec4-op - v1 v2))
 
 ;; scales a vector
-(define (vec4-scale v1 scale)
-  (make-vec4 (vec4-x * scale)
-	     (vec4-y * scale)
-	     (vec4-z * scale)
-	     (vec4-w * scale)))
+(define (vec4-scale v scale)
+  (make-vec4 (* (vec4-x v) scale)
+	     (* (vec4-y v) scale)
+	     (* (vec4-z v) scale)
+	     (* (vec4-w v) scale)))
 
 ;; linear interpolation
 (define (vec4-lerp v1 v2 time)
@@ -78,4 +78,19 @@
 		(* (vec4-w a) xy))
 	     (- (* (vec4-y a) xz)
 		(* (vec4-x a) yz)
-		(* (vec4-z a) xy)))
+		(* (vec4-z a) xy))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                        test code
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;(define a (make-vec4 1 1 1 1))
+;;(define b (make-vec4 2 2 2 2))
+;;(define c (make-vec4 3 3 3 3))
+;;(vec4-add a b)
+;;(vec4-sub c a)
+;;(vec4-scale a 5)
+;;(vec4-lerp v1 v2 time)
+;;(vec4-display v)
+;;(vec4-cross a b c)

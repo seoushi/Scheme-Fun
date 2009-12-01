@@ -43,7 +43,6 @@
 (define (vec2-norm a)
   (vec2-scale a (/ 1.0 (vec2-mag a))))
 
-
 ;; dot product
 (define (vec2-dot a b)
   (+ (* (vec2-x a) (vec2-x b))
