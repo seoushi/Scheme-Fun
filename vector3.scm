@@ -1,5 +1,5 @@
 ;;
-;; 3D Vector Math
+;; Vector 3 Math
 ;;
 ;; Written by: Sean Chapel
 ;; License: BSD
@@ -19,7 +19,7 @@
 
 
 ;; zero'ed vector
-(define vec-zero
+(define vec3-zero
   (make-vec3 0 0 0))
 
 
@@ -28,7 +28,7 @@
   (vec3-op + v1 v2))
 
 
-;; subtracts v1 from v2
+;; subtracts v2 from v1
 (define (vec3-sub v1 v2)
   (vec3-op - v1 v2))
 
@@ -59,8 +59,7 @@
 
 ;; distance between two vectors
 (define (vec3-dist v1 v2)
-  (let ((x (vec3-sub v1 v2)))
-    (sqrt (vec3-dot x x))))
+  (vec3-mag (vec3-sub v1 v2)))
 
 
 ;; cross-product
